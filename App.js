@@ -8,6 +8,9 @@ import DeckScreen from './screens/DeckScreen'
 import SettingsScreen from './screens/SettingsScreen'
 import ReviewScreen from './screens/ReviewScreen'
 
+import { Provider } from 'react-redux'
+import store from './store'
+
 export default class App extends React.Component {
   render() {
     const MainNavigator = TabNavigator({
@@ -32,9 +35,11 @@ export default class App extends React.Component {
       }
     })
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
