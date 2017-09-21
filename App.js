@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Platform, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation'
 import AuthScreen from './screens/AuthScreen'
 import WelcomeScreen from './screens/WelcomeScreen'
@@ -24,6 +24,11 @@ export default class App extends React.Component {
             })
           }
         }, { lazy: true, swipeEnabled: false, animationEnabled: false })
+      }
+    },{
+      // tabBarPosition: 'bottom',
+      tabBarOptions: {
+        style: { marginTop: Platform.OS === 'android' ? 24 : 0 }
       }
     })
     return (
