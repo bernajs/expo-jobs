@@ -12,11 +12,11 @@ class WelcomeScreen extends Component {
   static navigationOptions = {
     title: 'Bienvenidos',
   }
-  onSlideComplete(){ this.props.navigation.navigate('auth') }
+  onSlideComplete = () => { this.props.navigation.navigate('auth') }
 
   render() {
     return (
-      <Slides data={SLIDE_DATA} onComplete={this.onSlideComplete.bind(this)}></Slides>
+      <Slides data={SLIDE_DATA} onComplete={this.onSlideComplete}></Slides>
     )
   }
 }
