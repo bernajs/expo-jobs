@@ -26,14 +26,20 @@ export default class App extends React.Component {
               settings: { screen: SettingsScreen }
             })
           }
-        }, { lazy: true, swipeEnabled: false, animationEnabled: false })
+        }, {
+          tabBarPosition: 'bottom',
+          tabBarOptions: {
+            labelStyle: { fontSize: 12 }
+          }
+        })
       }
     },{
-      // tabBarPosition: 'bottom',
-      tabBarOptions: {
-        style: { marginTop: Platform.OS === 'android' ? 24 : 0 }
-      }
+      navigationOptions: {
+        tabBarVisible: false 
+      },
+      lazy: true
     })
+
     return (
       <Provider store={store}>
         <View style={styles.container}>
@@ -48,7 +54,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
     justifyContent: 'center',
   },
 });
