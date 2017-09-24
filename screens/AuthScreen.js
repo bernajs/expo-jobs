@@ -4,13 +4,19 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 
 class AuthScreen extends Component {
-  componentDidMount() { this.props.facebookLogin() }
+componentDidMount() { this.props.facebookLogin() }
+
+componentWillReceiveProps(nextProps) { this.onAuthComplete(nextProps) }
+
+onAuthComplete(props){ if(props.token){ this.props.navigation.navigate('map') } }
+
   render() {
     return (
-      <View>
-      </View>
+      <View />
     )
   }
 }
 
-export default connect(null, actions)(AuthScreen)
+function mapStateToProps({ auth }) { return{ token: auth.token } }
+
+export default connect(mapStateToProps, actions)(AuthScreen)
