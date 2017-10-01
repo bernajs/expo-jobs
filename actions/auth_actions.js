@@ -5,12 +5,9 @@ import {
 } from './types'
 
 export const facebookLogin = () => async dispatch => {
-  let token = await AsyncStorage.getItem('fb_id')
-  if(token){
-    dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token })
-  }else{
-    doFacebookLogin(dispatch)
-  }
+  let token = await AsyncStorage.getItem('fb_token')
+  if(token) dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token })
+  else doFacebookLogin(dispatch) 
 }
 
 const doFacebookLogin = async dispatch => {
