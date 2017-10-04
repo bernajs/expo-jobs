@@ -41,11 +41,12 @@ const initialRegion = {
   }
   render() {
     return (
-      <View>
+      <View style={{ marginTop: 10 }}>
         <Swipe
           data={this.props.jobs}
           renderCard={this.renderCard}
-          renderNoMoreCards={this.renderNoMoreCards}></Swipe>
+          renderNoMoreCards={this.renderNoMoreCards}
+          keyProp='jobkey'></Swipe>
       </View>
     )
   }
