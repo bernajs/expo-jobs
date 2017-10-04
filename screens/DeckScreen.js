@@ -4,16 +4,17 @@ import { connect } from 'react-redux'
 import Swipe from '../components/Swipe'
 import { MapView } from 'expo'
 import { Button, Card } from 'react-native-elements'
+import * as actions from '../actions'
 
 
 class DeckScreen extends Component {
   renderCard(job){
-const initialRegion = {
-  latitude: job.latitude,
-  longitude: job.longitude,
-  latitudeDelta: 0.045,
-  longitudeDelta: 0.02
-}
+    const initialRegion = {
+      latitude: job.latitude,
+      longitude: job.longitude,
+      latitudeDelta: 0.045,
+      longitudeDelta: 0.02
+    }
 
     return(
       <Card title={job.jobtitle}>
@@ -46,6 +47,7 @@ const initialRegion = {
           data={this.props.jobs}
           renderCard={this.renderCard}
           renderNoMoreCards={this.renderNoMoreCards}
+          onSwipeRight={job => this.props.likeJob(job)}
           keyProp='jobkey'></Swipe>
       </View>
     )
@@ -64,4 +66,4 @@ function mapStateToPros({ jobs }){
   return { jobs: jobs.results }
 }
 
-export default connect(mapStateToPros)(DeckScreen)
+export default connect(mapStateToPros, actions)(DeckScreen)
