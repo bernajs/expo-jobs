@@ -30,24 +30,23 @@ class MapScreen extends Component {
   searchJobs(){
     this.props.fetchJobs(this.state.region,
       () => this.props.navigation.navigate('deck'))
-  }
-
-  render() {
-    if(!this.state.mapLoaded){
-      return(
-        <View>
-          <ActivityIndicator size="large"></ActivityIndicator>
-        </View>
-      )
     }
-    return (
-      <View style={{ flex: 1 }}>
-        <MapView
-          region={this.state.region}
-          style={{ flex: 1 }}
-          onRegionChangeComplete={this.onRegionChangeComplete}
-        />
-        <View>
+
+    render() {
+      if(!this.state.mapLoaded){
+        return(
+          <View>
+            <ActivityIndicator size="large"></ActivityIndicator>
+          </View>
+        )
+      }
+      return (
+        <View style={{ flex: 1 }}>
+          <MapView
+            region={this.state.region}
+            style={{ flex: 1 }}
+            onRegionChangeComplete={this.onRegionChangeComplete}
+          />
           <Button
             title="Search jobs"
             backgroundColor="#009688"
@@ -57,16 +56,15 @@ class MapScreen extends Component {
             style={styles.button}>
           </Button>
         </View>
-      </View>
-    )
+      )
+    }
   }
-}
- const styles = {
-   button: {
-     position: 'absolute',
-     bottom: 20,
-     left: 0,
-     right: 0
-   }
- }
-export default connect(null, actions)(MapScreen)
+  const styles = {
+    button: {
+      position: 'absolute',
+      bottom: 20,
+      left: 0,
+      right: 0
+    }
+  }
+  export default connect(null, actions)(MapScreen)
