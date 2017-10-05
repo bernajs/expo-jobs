@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import { View, Text, Platform } from 'react-native'
 import { connect } from 'react-redux'
 import { clearLikedJobs } from '../actions'
-import { Button } from 'react-native-elements'
+import { Button, Icon } from 'react-native-elements'
 
 class SettingsScreen extends Component{
   static navigationOptions = {
-    header: {
-      style: { marginTop: Platform.OS === 'android' ? 24 : 0 }
+    title: 'Ajustes',
+    headerStyle: { marginTop: Platform.OS === 'android' ? 24 : 0 },
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon name="settings" size={30} color={tintColor}></Icon>
     }
   }
 
@@ -15,7 +17,7 @@ class SettingsScreen extends Component{
     return(
       <View>
         <Button
-          title="Reset liked jobs"
+          title="Eliminar todos los favoritos"
           large
           icon={{ name: 'delete-forever' }}
           backgroundColor="#F44336"

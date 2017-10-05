@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 
 class ReviewScreen extends Component {
   static navigationOptions = ({ navigation: { navigate }}) => ({
-    title: 'Review Jobs',
+    title: 'Favoritos',
     headerRight: (
-      <Button title="Settings" onPress={ () => navigate('settings') }
+      <Button title="Ajustes" onPress={ () => navigate('settings') }
         backgroundColor="rgba(0,0,0,0)"
         color="rgba(0, 122, 255, 1)"></Button>
       ),
@@ -42,7 +42,7 @@ class ReviewScreen extends Component {
                 <Text style={styles.italics}>{company}</Text>
                 <Text style={styles.italics}>{formattedRelativeTime}</Text>
               </View>
-              <Button title="Apply now"
+              <Button title="Ver más"
                 onPress={ ()=> Linking.openURL(url) }
                 backgroundColor='#03A9F4'></Button>
             </View>
@@ -55,7 +55,7 @@ class ReviewScreen extends Component {
       if(this.props.likedJobs.length == 0){
         return(
           <View>
-            <Text>You don't have liked any job</Text>
+            <Text>No tienes ningún trabajo en favoritos</Text>
           </View>
         )
       }

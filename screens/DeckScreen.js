@@ -9,7 +9,7 @@ import * as actions from '../actions'
 
 class DeckScreen extends Component {
   static navigationOptions = {
-    title: 'Jobs',
+    title: 'Trabajos',
     tabBarIcon: ({ tintColor }) => {
       return <Icon name="description" size={30} color={tintColor}></Icon>
     }
@@ -44,9 +44,9 @@ class DeckScreen extends Component {
 
   renderNoMoreCards = () => {
     return(
-      <Card title="No more jobs">
+      <Card title="No hay trabajos">
         <Button
-          title="Back to map"
+          title="Regresar al mapa"
           large
           icon={{ name: 'my-location' }}
           backgroundColor='#03A9F4'

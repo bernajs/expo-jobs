@@ -17,7 +17,7 @@ class MapScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Map',
+    title: 'Mapa',
     tabBarIcon: ({ tintColor }) => {
       return <Icon name="my-location" size={30} color={tintColor}></Icon>
     }
@@ -48,7 +48,7 @@ class MapScreen extends Component {
             onRegionChangeComplete={this.onRegionChangeComplete}
           />
           <Button
-            title="Search jobs"
+            title="Buscar trabajos"
             backgroundColor="#009688"
             large
             icon={{ name: 'search' }}

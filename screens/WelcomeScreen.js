@@ -5,9 +5,9 @@ import _ from 'lodash'
 import { AppLoading } from 'expo'
 
 const SLIDE_DATA = [
-  { text: 'Welcome to JobApp', color: '#03A9F4' },
-  { text: 'Use this to get a job', color: '#009688' },
-  { text: 'Set your location then swipe away', color: '#03A9F4' }
+  { text: 'Bienvenido a JobApp', color: '#03A9F4' },
+  { text: 'Encuentra tu trabajo ideal', color: '#009688' },
+  { text: 'Selecciona tu ubicación y nosotros nos encargamos del resto', color: '#03A9F4' }
 ]
 
 class WelcomeScreen extends Component {
