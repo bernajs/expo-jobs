@@ -17,6 +17,6 @@ onAuthComplete(props){ if(props.token){ this.props.navigation.navigate('map') } 
   }
 }
 
-function mapStateToProps({ auth }) { return{ token: auth.token } }
+function mapStateToProps({ auth }) { return { token: auth.token } }
 
 export default connect(mapStateToProps, actions)(AuthScreen)
